@@ -11,6 +11,26 @@ int main()
     testINIConfig.createKeyInSection("key1", "Section1");
     testINIConfig.setKeyValueInSection("key1", "Section1", "keyValue");
     
+
+    testINIConfig.createSection("Section2");
+    testINIConfig.createKeyInSection("key2", "Section2");
+    testINIConfig.setKeyValueInSection("key2", "Section2", "keyValue");
+    testINIConfig.createKeyInSection("key3", "Section2");
+    testINIConfig.createKeyInSection("key4", "Section2");
+    testINIConfig.setKeyValueInSection("key3", "Section2", "keyValue");
+    testINIConfig.setKeyValueInSection("key2", "Section2", "keyValueNew");
+
+    testINIConfig.createSection("Section3");
+    testINIConfig.createKeyInSection("key3", "Section3");
+    testINIConfig.setKeyValueInSection("key3", "Section3", "keyValue");
+
+
+    testINIConfig.getKeyValue("key3", "Section3");
+    testINIConfig.getSection("Section2");
+
+    map<string, string> bla = testINIConfig["Section3"];
+    string value = testINIConfig["Section1"]["key1"];
+
     std::cout << testINIConfig;
 }
 

@@ -8,8 +8,11 @@
 using namespace std;
 
 class INIData {
+
+private:
 	map<string, map<string, string>> dataConfig;
 	string name;
+
 public:
 	INIData() {
 	}

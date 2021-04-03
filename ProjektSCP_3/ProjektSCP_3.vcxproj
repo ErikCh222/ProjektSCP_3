@@ -144,8 +144,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="INIData.h" />
-    <ClInclude Include="INIReader.h" />
-    <ClInclude Include="INIWriter.h" />
+    <ClInclude Include="INIFile.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
