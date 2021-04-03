@@ -2,10 +2,16 @@
 //
 
 #include <iostream>
+#include "INIData.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    INIData testINIConfig("Meno");
+    testINIConfig.createSection("Section1");
+    testINIConfig.createKeyInSection("key1", "Section1");
+    testINIConfig.setKeyValueInSection("key1", "Section1", "keyValue");
+    
+    std::cout << testINIConfig;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
