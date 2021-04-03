@@ -15,19 +15,29 @@ public:
 		this->filePath = filePath;
 		this->configData = configData;
 	}
+	void setConfigData(INIData data);
+
+	INIData getConfigData();
 
 	INIData getINIDataFromFile();
+	
 	void writeINIDataToFile();
-	
-	void setConfigData(INIData data, bool rewrite = true);
-	
 
+	string getFilePath();
+	
+	void setFilePath(string path);
+	
 private: 
 	vector<string>readFile();
 	
-	string strpWhiteSpaces(string str);
+	string matchSection(string str);
+
+	string matchKey(string str);
+
+	string matchKeyValue(string str);
 
 	INIData formatConfigDataStructure(vector<string>bufferedData);
 
+	string formatConfigDataName();
 	
 };

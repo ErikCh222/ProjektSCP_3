@@ -21,6 +21,9 @@
     <ClCompile Include="INIData.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="INIFile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="INIData.h">

@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="INIData.cpp" />
+    <ClCompile Include="INIFile.cpp" />
     <ClCompile Include="ProjektSCP_3.cpp" />
   </ItemGroup>
   <ItemGroup>

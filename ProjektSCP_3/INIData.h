@@ -22,15 +22,18 @@ public:
 
 	}
 
-	INIData(INIData& data) {
-		this->name = data.getName();
-		this->dataConfig = map<string, map<string, string>>(data.getConfig());
+	INIData(const INIData& data) {
+		this->name = data.name;
+		this->dataConfig = map<string, map<string, string>>(data.dataConfig);
 	}
 
 	~INIData() {
 		this->dataConfig.clear();
 	}
 
+	bool empty() const {
+		return this->name.empty() && dataConfig.size() == 0;
+	}
 	string getName() {
 		return this->name;
 	}

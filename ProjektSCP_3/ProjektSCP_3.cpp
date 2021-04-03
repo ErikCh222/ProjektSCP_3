@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include "INIData.h"
-
+#include "INIFile.h"
 int main()
 {
     INIData testINIConfig("Meno");
@@ -32,6 +32,13 @@ int main()
     string value = testINIConfig["Section1"]["key1"];
 
     std::cout << testINIConfig;
+    INIFile file("C:\\Users\\erik.chovanec\\source\\repos\\ProjektSCP_3\\ProjektSCP_3\\new.ini");
+
+    //file.writeINIDataToFile();
+
+    INIData iniData = file.getINIDataFromFile();
+
+    std::cout << iniData;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
