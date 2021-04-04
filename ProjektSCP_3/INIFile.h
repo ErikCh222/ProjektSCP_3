@@ -38,6 +38,8 @@ private:
 
 	INIData formatConfigDataStructure(vector<string>bufferedData);
 
-	string formatConfigDataName();
+	string formatConfigDataName(); 
+
+	void matchLines(INIData& data, string& s, string& lastSection);
 	
 };

@@ -1,5 +1,20 @@
-// ProjektSCP_3.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+// ProjektSCP_3.cpp : Project for SCP INI config file 
+
+/*Expected functionality:
+*   - create data structure for .INI file
+*   - ability to create/update new sections, keys in data structure
+*       - no duplicated sections
+*       - no duplicated keys in section
+*       - able to create single section or key
+*       - able assing keyValue to given key and section
+*       - using INIData.createKeyInsection/setKeyValueInSection - if section or key doesnt exist it will be created
+*   - retrieving data from data structure
+*       - if given section or key doesnt exit - return empty
+*   - operator for redirecting data to output
+*   - operator for meging to data structures
+    - read .INI files - may throw FileOperationException
+    - write .INI files - may throw FileOperationException - rewrite existing
+*/
 
 #include <iostream>
 #include "INIData.h"
@@ -7,22 +22,9 @@
 int main()
 {
     INIData testINIConfig("Meno");
-    testINIConfig.createSection("Section1");
-    testINIConfig.createKeyInSection("key1", "Section1");
-    testINIConfig.setKeyValueInSection("key1", "Section1", "keyValue");
-    
-
-    testINIConfig.createSection("Section2");
-    testINIConfig.createKeyInSection("key2", "Section2");
-    testINIConfig.setKeyValueInSection("key2", "Section2", "keyValue");
-    testINIConfig.createKeyInSection("key3", "Section2");
-    testINIConfig.createKeyInSection("key4", "Section2");
-    testINIConfig.setKeyValueInSection("key3", "Section2", "keyValue");
-    testINIConfig.setKeyValueInSection("key2", "Section2", "keyValueNew");
-
-    testINIConfig.createSection("Section3");
-    testINIConfig.createKeyInSection("key3", "Section3");
-    testINIConfig.setKeyValueInSection("key3", "Section3", "keyValue");
+    testINIConfig.createSection("Section5");
+    testINIConfig.createKeyInSection("key6", "Section1");
+    testINIConfig.setKeyValueInSection("key11add1", "Sectdadadion1", "keyValue");
 
 
     testINIConfig.getKeyValue("key3", "Section3");
@@ -36,18 +38,25 @@ int main()
 
     //file.writeINIDataToFile();
 
+    std::cout << "________________________"<<std::endl;
     INIData iniData = file.getINIDataFromFile();
-
     std::cout << iniData;
+
+
+    std::cout << "________________________" << std::endl;
+    INIData inssiData= iniData + testINIConfig;
+    std::cout << inssiData;
+
+
+    inssiData.getSection("haldhaldhaldhlad");
+    inssiData.createKeyInSection("sjdhsldhsldhsd", "shdosdhosd");
+
+    inssiData["dahoidlhada"];
+    inssiData["dahoidlhada"]["shit"];
+    std::cout << "SHUT";
+
+    file.setConfigData(iniData);
+    file.writeINIDataToFile();
+
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file

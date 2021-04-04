@@ -32,5 +32,8 @@
     <ClInclude Include="INIFile.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="MyExceptions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -3,26 +3,26 @@
 
 void INIData::createSection(string sectionName) {
 	map<string, string> newEmptyMap;
-	this->dataConfig.emplace(sectionName, newEmptyMap);
+	this->dataConfig.emplace(sectionName, newEmptyMap); 
 }
 
 
 void INIData::createKeyInSection(string key, string sectionName) {
 
-	this->dataConfig[sectionName].emplace(key, "");
+	this->dataConfig[sectionName].emplace(key, ""); 
 }
 
 
 void INIData::setKeyValueInSection(string key, string sectionName, string keyValue) {
-	this->dataConfig[sectionName][key] = keyValue;
+	this->dataConfig[sectionName][key] = keyValue; 
 }
 
 map<string, string> INIData::getSection(string sectionName) {
-	return this->dataConfig[sectionName];
+	return this->dataConfig[sectionName]; // exception for non existent section
 }
 
 string INIData::getKeyValue(string key, string sectionName) {
-	return this->dataConfig[sectionName][key];
+	return this->dataConfig[sectionName][key]; // exception for non existent key
 }
 
 
