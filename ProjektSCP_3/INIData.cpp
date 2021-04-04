@@ -18,11 +18,11 @@ void INIData::setKeyValueInSection(string key, string sectionName, string keyVal
 }
 
 map<string, string> INIData::getSection(string sectionName) {
-	return this->dataConfig[sectionName]; // exception for non existent section
+	return this->dataConfig[sectionName];
 }
 
 string INIData::getKeyValue(string key, string sectionName) {
-	return this->dataConfig[sectionName][key]; // exception for non existent key
+	return this->dataConfig[sectionName][key]; 
 }
 
 
