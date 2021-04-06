@@ -48,10 +48,15 @@ vector<string> INIFile::readFile() {
 
 string  INIFile::matchSection(string str) {
 	smatch matched_group; 
-	regex regexPattern("\\[(.*?)\\]");
+	regex regexPattern("([#;])?\\[(.*?)\\](.{0,})");
 	if (regex_search(str, matched_group, regexPattern)) {
-		if(matched_group.size()!=2) throw WrongLineInConfig("too many groups found, innapropriate format");
-		return matched_group[1].str();
+		if (
+			matched_group.size() == 3 || 
+			(matched_group.size() == 4 && matched_group[1] != "#" || matched_group[1] != ";")
+			) {
+			return matched_group[2].str(); 
+		}else throw WrongLineInConfig("wrong format of the line or commsent");
+		
 	}
 	else {
 		throw MatchNotFound();
@@ -60,10 +65,19 @@ string  INIFile::matchSection(string str) {
 
 string  INIFile::matchKey(string str) {
 	smatch matched_group;
-	regex regexPattern("^[\\t ]*(.*?)\\s*=[\\t ]*(.*?)(#.*)?$");
+	regex regexPattern("^([#;])?[\\t ]*(.*?)\\s*=[\\t ]*(.*?)([#;(\\r)].*)?$");
 	if (regex_search(str, matched_group, regexPattern)) {
-		if (matched_group.size() != 4) throw WrongLineInConfig("too many groups found, innapropriate format");
-		return matched_group[1].str();
+		if (matched_group.size() > 5 || matched_group.size() < 4) throw WrongLineInConfig("wrong format of the line");
+		if (matched_group[1] == "#" || matched_group[1] == ";") throw MatchNotFound("Comment");
+		if (
+			(matched_group.size() == 4 || 
+			(matched_group.size() == 5 && matched_group[4] == "\r")) 
+			) {
+			return matched_group[2].str();
+		}
+		else{
+			throw MatchNotFound("Comment");
+		}
 	}
 	else {
 		throw MatchNotFound();
@@ -72,10 +86,16 @@ string  INIFile::matchKey(string str) {
 
 string  INIFile::matchKeyValue(string str) {
 	smatch matched_group;
-	regex regexPattern("^[\\t ]*(.*?)\\s*=[\\t ]*(.*?)(#.*)?$");
+	regex regexPattern("^([#;])?[\\t ]*(.*?)\\s*=[\\t ]*(.*?)([#;(\\r)].*)?$");
 	if (regex_search(str, matched_group, regexPattern)) {
-		if (matched_group.size() != 4) throw WrongLineInConfig("too many groups found, innapropriate format");
-		return matched_group[2].str();
+		if (matched_group.size() > 5 || matched_group.size() < 4) throw WrongLineInConfig("wrong format of the line");
+		if (matched_group[1] == "#" || matched_group[1] == ";") throw MatchNotFound("Comment");
+		if (matched_group.size() == 4 || (matched_group.size() == 5 && matched_group[4] == "\r")) {
+			return matched_group[3].str();
+		}
+		else {
+			throw MatchNotFound("Comment");
+		}
 	}
 	else {
 		throw MatchNotFound();

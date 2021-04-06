@@ -41,5 +41,6 @@ private:
 	string formatConfigDataName(); 
 
 	void matchLines(INIData& data, string& s, string& lastSection);
+
 	
 };

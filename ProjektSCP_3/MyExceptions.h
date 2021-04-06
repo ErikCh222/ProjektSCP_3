@@ -5,9 +5,17 @@ using namespace std;
 
 class MatchNotFound : public exception
 {
+	string s;
+public:
+	MatchNotFound() {
+		this->s = "Regex match not found";
+	}
+	MatchNotFound(string s) {
+		this->s = s;
+	}
 	const char* what() const throw()
 	{
-		return "Regex match not found";
+		return s.c_str();
 	}
 };
 

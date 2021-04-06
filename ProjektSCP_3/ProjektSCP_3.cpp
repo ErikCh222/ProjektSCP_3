@@ -21,6 +21,7 @@
 #include "INIFile.h"
 int main()
 {
+ 
     INIData testINIConfig("Meno");
     testINIConfig.createSection("Section5");
     testINIConfig.createKeyInSection("key6", "Section1");
@@ -57,6 +58,16 @@ int main()
 
     file.setConfigData(iniData);
     file.writeINIDataToFile();
+
+
+
+    INIFile testConfig("C:\\Users\\erik.chovanec\\source\\repos\\ProjektSCP_3\\ProjektSCP_3\\testConfig.ini");
+
+    testConfig.getINIDataFromFile();
+
+    INIData testConfigData = testConfig.getConfigData();
+
+    std::cout << testConfigData;
 
 }
 
