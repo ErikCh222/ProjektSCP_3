@@ -144,6 +144,7 @@
     <ClCompile Include="ProjektSCP_3.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DemonstrationFunc.h" />
     <ClInclude Include="INIData.h" />
     <ClInclude Include="INIFile.h" />
     <ClInclude Include="MyExceptions.h" />

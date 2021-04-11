@@ -41,8 +41,9 @@ ostream& operator<< (ostream& out, INIData& iniData) {
 		map<string, map<string, string>>::iterator it = iniData.dataConfig.begin();
 		it != iniData.dataConfig.end(); it++
 		) {
+		out << "#===================================================================" << endl;
 		out << "[" << it->first << "] "<< endl;
-		out << "#==================================================================="<< endl;
+		out << "#-------------------------------------------------------------------"<< endl;
 		for (
 			map<string, string>::iterator it2 = it->second.begin();
 			it2 != it->second.end(); it2++

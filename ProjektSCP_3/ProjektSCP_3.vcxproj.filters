@@ -35,5 +35,8 @@
     <ClInclude Include="MyExceptions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="DemonstrationFunc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
