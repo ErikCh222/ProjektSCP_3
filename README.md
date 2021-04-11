@@ -23,17 +23,25 @@ Expected functionality:
 [section1]
 
 key1=value1
+
 key2=value2
+
 key3=value3
+
 [section2] 
 
-key1
+key1=1
+
 key2=2
+
 key3=3
+
 [section3] 
 
 key1=value1
+
 key2=value2
+
 key3=value3
 
     readFileAndPrintINIFile() - will read file from given file path 
