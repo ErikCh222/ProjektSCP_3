@@ -1,5 +1,6 @@
-# ProjektSCP_3
-ProjektSCP_3.cpp : Project for SCP INI config file 
+# Project SCP_3
+
+School project for managing configuration data structure of .ini files 
 
 Expected functionality:
    - create data structure for .INI file
