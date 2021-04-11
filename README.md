@@ -19,19 +19,26 @@ Expected functionality:
     Demonstration functions:
 
     createNewAndPrintDataStructure() - will create and print new DataStructure of format
-        [section1]
-        key=1
-        key=2
-        key=3
-        [section2]
-        key=1
-        key=2
-        key=3
-        [section3]
-        key=1
-        key=2
-        key=3
+#===================================================================
+[section1] 
+#-------------------------------------------------------------------
+key1=value1
+key2=value2
+key3=value3
+#===================================================================
+[section2] 
+#-------------------------------------------------------------------
+key1=1
+key2=2
+key3=3
+#===================================================================
+[section3] 
+#-------------------------------------------------------------------
+key1=value1
+key2=value2
+key3=value3
+
     readFileAndPrintINIFile() - will read file from given file path 
     writeNewINIFile() - will write data structure above to file
     
-   
+    createNewDataStructure() - will create INIdata - showing how you create data inside     
