@@ -20,15 +20,18 @@ Expected functionality:
 
     createNewAndPrintDataStructure() - will create and print new DataStructure of format
 
-[section1] \n
+[section1]
+
 key1=value1
 key2=value2
 key3=value3
-[section2] \n
-key1=1
+[section2] 
+
+key1
 key2=2
 key3=3
-[section3] \n
+[section3] 
+
 key1=value1
 key2=value2
 key3=value3
