@@ -2,7 +2,7 @@
 
 School project for managing configuration data structure of .ini files 
 
-Expected functionality:
+Functionality:
    - create data structure for .INI file
    - ability to create/update new sections, keys in data structure
        - no duplicated sections
@@ -13,7 +13,8 @@ Expected functionality:
    - retrieving data from data structure
        - if given section or key doesnt exit - return empty
    - operator for redirecting data to output
-   - operator for meging to data structures
+   - operator for meging data structures
+   - operator for getting data key values 
    - read .INI files - may throw FileOperationException, ignoring comments inside .INI file
    - write .INI files - may throw FileOperationException - rewrite existing data in file
 
